@@ -1,0 +1,5 @@
+The .container class provides a responsive fixed width container.<div class='container'>
+The .container-fluid class provides a full width container, spanning the entire width of the viewport
+#if u want to apply something from static block 
+1.load static {%load stati%}
+2.write link in head

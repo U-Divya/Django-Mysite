@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	<h3 class='text-center'>MY BLOG</h3>
+	<button type='button' class='btn' >
+		<a href="postform/"> post new blog </a>
+	</button>
+	<table class="table table-hover">
+		<tr class='bg-primary'>
+			<th>Blog title</th>
+			<th>Author name</th>
+			<th>Date published</th>
+			<th>content</th>
+		</tr>
+
+
+		{%for i in var%}
+		<tr>
+			<td>{{i.title}}</td>
+			<td>{{i.author}}</td>
+			<td>{{i.published}}</td>
+			<td>{{i.content}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+
+<div class='pagination'>
+	<span class='step-links'>
+		{% if var.has_previous %}
+			<a href="?page={{ var.previous_page_number}}">previous</a>
+		{%endif%}
+		<span class='current'>
+			page{{var.number}} of {{var.paginator.num_pages}}.
+		</span>
+		{% if var.has_next %}
+			<a href="?page={{var.next_page_number}}">next</a>
+		{% endif %}
+	</span>
+</div>
+
+
+{%endblock%}
